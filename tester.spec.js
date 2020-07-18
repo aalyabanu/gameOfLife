@@ -10,3 +10,11 @@ describe("cell state", () => {
         expect(result).toEqual(0);
     })
 })
+
+//assigning a cell with initial state
+describe('Cell', () => {
+    it("should be assigned with cellState", () => {
+        const cell = new Cell(cellState.ALIVE) //creating new instance of Cell object and assigning it with alive state
+        expect(cell.state).toEqual(cellState.AlIVE); //expecting to be initialized to ALIVE
+    });
+});
