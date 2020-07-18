@@ -1,13 +1,12 @@
-import { checkState } from "./tester"
+import { cellState } from "./tester"
 
-
-describe("state", () => {
-    it("should be alive", () => {
-        const result = checkState("0")
-        expect(result).toBe(true);
+describe("cell state", () => {
+    it("should be ALIVE", () => {
+        const result = cellState.ALIVE
+        expect(result).toEqual(1);
     })
-    it("should be adead", () => {
-        const result = checkState("1")
-        expect(result).toBe(false);
+    it("should be dead", () => {
+        const result = cellState.DEAD
+        expect(result).toEqual(0);
     })
 })
