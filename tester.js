@@ -1,4 +1,10 @@
 
 var cellState = { ALIVE: 1, DEAD: 0, };
-export { cellState };
+class Cell {
+    constructor(state) {
+        this.state = state;
+    }
+}
+export { Cell };
 
+export { cellState };
