@@ -1,5 +1,6 @@
 import { cellState } from "./tester";
 import { Cell } from "./tester";
+import {Game} from "./tester";
 
 describe("cell state", () => {
     it("should be ALIVE", () => {
@@ -58,3 +59,27 @@ describe("Cell ", () => {
         expect(stateWith3Neighbours).toEqual(cellState.ALIVE);
     });
 });
+
+describe('Game of Life', () => {
+    it('should be intialized with initial states', () => {
+        // creating array of intial states
+        const state = [
+            [ALIVE, ALIVE, ALIVE],
+            [ALIVE, ALIVE, ALIVE],
+            [ALIVE, ALIVE, ALIVE]
+        ];
+
+        const game = new Game(state);
+
+        //creating cells with above initial states
+        const cellState = [
+            [new Cell(ALIVE), new Cell(ALIVE), new Cell(ALIVE)],
+            [new Cell(ALIVE), new Cell(ALIVE), new Cell(ALIVE)],
+            [new Cell(ALIVE), new Cell(ALIVE), new Cell(ALIVE)],
+        ];
+        expect(game.state).toEqual(cellState);
+    })
+
+
+
+})
