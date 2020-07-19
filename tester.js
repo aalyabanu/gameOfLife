@@ -4,6 +4,12 @@ class Cell {
     constructor(state) {
         this.state = state;
     }
+
+    getNextState(numOfNeighbours) {
+        if (numOfNeighbours < 2) {
+            return cellState.DEAD;
+        }
+    }
 }
 export { Cell };
 
