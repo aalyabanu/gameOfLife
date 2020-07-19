@@ -8,9 +8,9 @@ class Cell {
     getNextState(numOfNeighbours) {
         if (numOfNeighbours < 2) {
             return cellState.DEAD;
-        }
+        } else if (numOfNeighbours > 3)
+            return cellState.DEAD;
+
     }
 }
 export { Cell };
-
-export { cellState };
