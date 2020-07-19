@@ -24,12 +24,12 @@ describe("Cell ", () => {
 
     // Frist condition of the cell (Any live cell with fewer than two live neighbours dies as if by under population.)
     it('Should die if it has fewer than 2 live nieghbors', () => {
-        const cell = new Cell(CellState.ALIVE);
+         const cell = new Cell(cellState.ALIVE);
         const StateWith0Neighbors = cell.getNextState(0);
-        expect(StateWith0Neighbors).toEqual(CellState.DEAD); //expecting to be initialized to DEAD
+        expect(StateWith0Neighbors).toEqual(cellState.DEAD); //expecting to be initialized to DEAD
 
         const StateWith1Neighbor = cell.getNextState(1);
-        expect(StateWith1Neighbor).toEqual(CellState.DEAD);
+        expect(StateWith1Neighbor).toEqual(cellState.DEAD);
     });
 
 });
