@@ -41,5 +41,14 @@ describe("Cell ", () => {
         const StateWith5Neighbours = cell.getNextState(5);
         expect(StateWith5Neighbours).toEqual(cellState.DEAD);
     });
+    // Third condition of the cell (Any live cell with two or three live neighbours lives on to the next generation.
+    it('Should live with 2 or 3 live neighbours', () => {
+        const cell = new Cell(cellState.ALIVE);
+        const StateWith2Neighbours = cell.getNextState(2);
+        expect(StateWith2Neighbours).toEqual(cellState.ALIVE);
 
+        const StateWith3Neighbours = cell.getNextState(3);
+        expect(StateWith3Neighbours).toEqual(cellState.ALIVE); //expecting to be initialized to AlIVE
+
+    });
 });
