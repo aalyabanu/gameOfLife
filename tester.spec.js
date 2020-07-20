@@ -126,5 +126,16 @@ describe('Game of Life', () => {
         expect(numAliveNeighbours2).toEqual(3);
     });
 
+    it('Should get the number of alive neighbours for cell in the top row', () => {
+        const gameState = [
+            [ALIVE, ALIVE, ALIVE],
+            [DEAD, DEAD, DEAD],
+            [DEAD, DEAD, DEAD],
+        ];
+        const game = new Game(gameState);
+        const numAliveNeighbours = game.getNumOfAliveNeighbours(0, 1);
+        expect(numAliveNeighbours).toEqual(2);
+    });
+
 
 })
