@@ -31,8 +31,17 @@ class Cell {
 
 };
 
+class Game {
+    constructor(state) {
+        this.rows = state.length;
+        this.cols = state[0].length;
+        this.state = state.map(row => row.map(cellState => new Cell(cellState)));
+    }
+}
+
 
 
 
 export { Cell };
 export { cellState };
+export { Game };

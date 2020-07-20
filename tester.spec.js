@@ -84,12 +84,11 @@ describe('Game of Life', () => {
         ];
         expect(game1.state).toEqual(cellState1);
 
-        const state1 = [
-            [ALIVE, ALIVE, ALIVE],
-            [ALIVE, ALIVE, ALIVE],
-            [ALIVE, ALIVE, ALIVE]
+        const state2 = [
+            [DEAD, DEAD, DEAD],
+            [DEAD, DEAD, DEAD],
+            [DEAD, DEAD, DEAD]
         ];
-
         const game2 = new Game(state2);
 
         //creating cells with above initial states
