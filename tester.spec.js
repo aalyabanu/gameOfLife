@@ -2,6 +2,9 @@ import { cellState } from "./tester";
 import { Cell } from "./tester";
 import {Game} from "./tester";
 
+
+
+
 describe("cell state", () => {
     it("should be ALIVE", () => {
         const result = cellState.ALIVE
