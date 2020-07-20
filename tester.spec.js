@@ -1,8 +1,7 @@
 import { cellState } from "./tester";
 import { Cell } from "./tester";
 import { Game } from "./tester";
-import { ALIVE } from "./tester";
-import { DEAD } from "./tester";
+
 
 
 
@@ -64,6 +63,7 @@ describe("Cell ", () => {
         expect(stateWith3Neighbours).toEqual(cellState.ALIVE);
     });
 });
+const { DEAD, ALIVE } = cellState;
 
 describe('Game of Life', () => {
     it('should be intialized with initial states', () => {
@@ -106,9 +106,21 @@ describe('Game of Life', () => {
             [DEAD, DEAD, DEAD],
         ];
         const game = new Game(gameState);
-        const numAliveNeighbors = game.getNumOfAliveNeighbours(1, 1); //ALIVE cell locate 
-        expect(numAliveNeighbors).toEqual(3); // number of ALIVE neighbours cell 
+        const numAliveNeighbours = game.getNumOfAliveNeighbours(1, 1); //ALIVE cell locate 
+        expect(numAliveNeighbours).toEqual(3); // number of ALIVE neighbours cell 
     })
+
+
+    it('Should get the number of alive neighbours below given cell', () => {
+        const gameState = [
+            [DEAD, DEAD, DEAD],
+            [DEAD, ALIVE, DEAD],
+            [ALIVE, ALIVE, ALIVE],
+        ];
+        const game = new Game(gameState);
+        const numAliveNeighbours = game.getNumOfAliveNeighbours(1, 1);
+        expect(numAliveNeighbours).toEqual(3);
+    });
 
 
 })
