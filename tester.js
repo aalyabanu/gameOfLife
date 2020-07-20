@@ -37,9 +37,6 @@ class Game {
         this.state = state.map(row => row.map(cellState => new Cell(cellState)));
     }
 
-    getCellState(row,col){
-        return this.state[row][col];
-    }
     getNumOfAliveNeighbours(row, col) {
         const stateValues = {
             [cellState.ALIVE]: 1,
