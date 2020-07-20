@@ -99,7 +99,16 @@ describe('Game of Life', () => {
         ];
         expect(game2.state).toEqual(cellState2);
     })
-
+    it('Should get the number of alive neighbours above given cell', () => {
+        const gameState = [
+            [ALIVE, ALIVE, ALIVE],
+            [DEAD, ALIVE, DEAD],
+            [DEAD, DEAD, DEAD],
+        ];
+        const game = new Game(gameState);
+        const numAliveNeighbors = game.getNumOfAliveNeighbours(1, 1); //ALIVE cell locate 
+        expect(numAliveNeighbors).toEqual(3); // umber of ALIVE neighbours cell 
+    })
 
 
 })
