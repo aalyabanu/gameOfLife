@@ -107,7 +107,7 @@ describe('Game of Life', () => {
         ];
         const game = new Game(gameState);
         const numAliveNeighbors = game.getNumOfAliveNeighbours(1, 1); //ALIVE cell locate 
-        expect(numAliveNeighbors).toEqual(3); // umber of ALIVE neighbours cell 
+        expect(numAliveNeighbors).toEqual(3); // number of ALIVE neighbours cell 
     })
 
 
