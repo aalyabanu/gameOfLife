@@ -49,18 +49,18 @@ class Game {
         let numAliveNeighbours = 0;
 
         if (rowBefore >= 0) {  //rowBefore exists
-            for (const i = 0; i <= this.cols; i++) {
+            for (let i = 0; i <= this.cols; i++) {
                 this.state[rowBefore][i] === "ALIVE" ? numAliveNeighbours++ : numAliveNeighbours = numAliveNeighbours;
             }
         }
         if (rowAfter <= this.rows) { //rowAfter exists
-            for (const i = 0; i <= this.cols; i++) {
+            for (let i = 0; i <= this.cols; i++) {
                 this.state[rowAfter][i] === "ALIVE" ? numAliveNeighbours++ : numAliveNeighbours = numAliveNeighbours;
             }
         }
 
-        for (const i = 0; i <= this.cols; i++) { //checking for the current row
-            if (i != currentRow && i != currentCol) {  //ignore the current cell
+        for (let i = 0; i <= this.cols; i++) { //checking for the current row
+            if (i != currentRow && i != currentCol) {  //ignore the current
                 this.state[row][i] === "ALIVE" ? numAliveNeighbours++ : numAliveNeighbours = numAliveNeighbours;
             }
         }
