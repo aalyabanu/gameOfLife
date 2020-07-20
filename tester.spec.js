@@ -1,6 +1,9 @@
 import { cellState } from "./tester";
 import { Cell } from "./tester";
 
+
+
+
 describe("cell state", () => {
     it("should be ALIVE", () => {
         const result = cellState.ALIVE
@@ -56,5 +59,27 @@ describe("Cell ", () => {
         const cell = new Cell(cellState.DEAD);
         const stateWith3Neighbours = cell.getNextState(3);
         expect(stateWith3Neighbours).toEqual(cellState.ALIVE);
+    });
+});
+const { DEAD, ALIVE } = cellState;
+
+const deadState = [ //  put the state in avariable 
+    [DEAD, DEAD, DEAD], // the actully iterate over it and creat cells for every location
+    [DEAD, DEAD, DEAD],
+    [DEAD, DEAD, DEAD],
+];
+
+describe('Game of Life', () => {
+    it('Should be initialized with a given state', () => {
+        const game = new Game(deadState);
+
+        const cellState = [ // create cell with all of those state 
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+        ];
+
+
+        expect(game.state).toEqual(cellState);
     });
 });
