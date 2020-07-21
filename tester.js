@@ -77,17 +77,14 @@ class Game {
 
 
     }
-
     getNextState() {
-
+        return this.state.map((row, rowNum) => row.map(
+            (cell, colNum) => new Cell(
+                cell.getNextState(this.getNumOfAliveNeighbours(rowNum, colNum)),
+            ),
+        ));
     }
 }
-
-
-
-
-
-
 
 
 export { Cell };
