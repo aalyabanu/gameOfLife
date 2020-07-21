@@ -2,10 +2,6 @@ import { cellState } from "./tester";
 import { Cell } from "./tester";
 import { Game } from "./tester";
 
-
-
-
-
 describe("cell state", () => {
     it("should be ALIVE", () => {
         const result = cellState.ALIVE
@@ -158,5 +154,21 @@ describe('Game of Life', () => {
         expect(numAliveNeighbours).toEqual(1);
     });
 
+    it('should generate the next state of the game', () => {
+        const gameState = [
+            [DEAD, ALIVE, DEAD],
+            [ALIVE, DEAD, DEAD],
+            [ALIVE, DEAD, ALIVE],
+        ];
+        const game = new Game(gameState);
+        const changedState = game.getNextState();
+
+        const expectedState = [
+            [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(ALIVE), new Cell(DEAD), new Cell(DEAD)],
+            [new Cell(DEAD), new Cell(ALIVE), new Cell(DEAD)],
+        ]
+        expect(changedState).toEqual(expectedState);
+    })
 
 });

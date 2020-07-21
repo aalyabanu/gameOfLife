@@ -77,6 +77,10 @@ class Game {
 
 
     }
+
+    getNextState() {
+
+    }
 }
 
 
