@@ -19,6 +19,7 @@ describe("cell state", () => {
 
 //assigning a cell with initial state
 describe("Cell ", () => {
+
     it("should be assigned with cellState", () => {
         const aliveCell = new Cell(cellState.ALIVE) //creating new instance of Cell object and assigning it with alive state
         expect(aliveCell.state).toEqual(cellState.ALIVE);
@@ -136,6 +137,26 @@ describe('Game of Life', () => {
         const numAliveNeighbours = game.getNumOfAliveNeighbours(0, 1);
         expect(numAliveNeighbours).toEqual(2);
     });
+    it('Should get the number of alive neighbors for cell in the last col', () => {
+        const gameState = [
+            [DEAD, DEAD, DEAD],
+            [DEAD, DEAD, ALIVE],
+            [DEAD, DEAD, DEAD],
+        ];
+        const game = new Game(gameState);
+        const numAliveNeighbours = game.getNumOfAliveNeighbours(1, 2);
+        expect(numAliveNeighbours).toEqual(0);
+    });
+    it('Should get the number of alive neighbours for cell in the first column', () => {
+        const gameState = [
+            [ALIVE, ALIVE, DEAD],
+            [DEAD, DEAD, DEAD],
+            [DEAD, DEAD, DEAD],
+        ];
+        const game = new Game(gameState);
+        const numAliveNeighbours = game.getNumOfAliveNeighbours(0, 0);
+        expect(numAliveNeighbours).toEqual(1);
+    });
 
 
-})
+});
